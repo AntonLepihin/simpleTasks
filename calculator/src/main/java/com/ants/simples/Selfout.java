@@ -14,9 +14,10 @@ public class Selfout {
         try {
             Path currentRelativePath = Paths.get("");
             String s = currentRelativePath.toAbsolutePath().toString();
+            String pack = Selfout.class.getCanonicalName().replace('.', '/');
 
-            String dir = s+"/calculator/src/main/java/com/ants/simples/";
-            BufferedReader br = new BufferedReader(new FileReader(dir+"/Selfout.java"));
+            String dir = s + "/calculator/src/main/java/" + pack + ".java";
+            BufferedReader br = new BufferedReader(new FileReader(dir));
 
             String line;
             while ((line = br.readLine()) != null) {
